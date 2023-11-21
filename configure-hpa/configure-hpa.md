@@ -20,21 +20,58 @@ In this lab, you will:
 
 ## Task 1: Install Prometheus Adaptor
 
+1. Copy and paste the following command in the terminal to navigate to workshop source code folder.
+    ```bash
+    <copy>cd ~/hpa-demo/</copy>
+    ```
 
-
-
-
+2. Copy and paste the following command in terminal and replace **`PRIVATE_IP_OF_WORKERNODE`** with private ip of worker and then run the command to install the prometheus adaptor.
+    ```bash
+    <copy>helm install prometheus-adapterhpatest prometheus-community/prometheus-adapter --namespace monitoring --values promadaptervalues.yaml --set "prometheus.port=30000" --set "prometheus.url=http://PRIVATE_IP_OF_WORKERNODE"</copy>
+    ```
+    ![install adaptor](images/install-adaptor.png)
 
 ## Task 2: Install Kubernetes Horizontal Pods Autoscaler
 
+1. Copy and paste the following command to the terminal to deploy the Kubernetes Horizontal Pod Autoscaler
+    ```bash
+    <copy>cd ~/hpa-demo/
+    kubectl apply -f customhpa.yaml</copy>
+    ```
 
-
-
-
+    ![deploy hpa](images/deploy-hpa.png)
 
 
 
 ## Task 3: Simulate Auto scaling up and down
+
+1. In the terminal, copy and paste the following command to view running server pods in weblogic domain.  
+    ```bash
+    <copy>kubectl get pods -n test-domain-ns -w</copy>
+    ```
+
+    > you can title this tab as **Server Pods**.
+
+2. Open a new tab in the terminal and copy and paste the following command in the new tab to view hpa running status.
+    ```bash
+    <copy>kubectl get hpa -n test-domain-ns -w</copy>
+    ```
+
+    > you can title this tab as **HPA Pod**.
+
+3. In the Firefox, copy and paste the prometheus URL **http://`PUBLIC_IP_OF_WORKERNODE`:30000** and replace PUBLIC_IP_OF_WORKERNODE with public IP of worker node.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
