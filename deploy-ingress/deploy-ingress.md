@@ -6,9 +6,6 @@ In this lab, we install the *Traefik* Ingress Controller. Later, we updates the 
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Deploy Ingress Controller to OKE Cluster](videohub:1_4kih00fi)
-
 ### Objectives
 
 In this lab, you will:
@@ -76,7 +73,6 @@ In this task, we add the Ingress routes for Accessing the Admin Console, Applica
     > You need to notedown this IP and save it in text file.
 
 ## Acknowledgements
-
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Sid Joshi
-* **Last Updated By/Date** - Ankit Pandey, August 2023
+* **Last Updated By/Date** - Ankit Pandey, November 2023

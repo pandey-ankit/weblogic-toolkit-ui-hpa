@@ -6,55 +6,15 @@ In this lab, we authenticate OCI CLI using the browser, which will creates *.oci
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Deploy WebLogic Operator to OKE Cluster](videohub:1_0itbllhe)
-
 ### Objectives
 
 In this lab, you will:
 
-* Configure kubectl (Kubernetes Cluster CLI) to connect to Kubernetes Cluster.
 * Verify Connectivity of WebLogic Kubernetes Toolkit UI to Kubernetes Cluster.
 * Install the WebLogic Kubernetes Operator to Kubernetes Cluster.
 
 
-## Task 1: Configure kubectl (Kubernetes Cluster CLI) to connect to Oracle Kubernetes Cluster
-In this Task, we creats the configuration file *.oci/config* and *.kube/config* in */home/opc* directory. This configuration file allow us to access Oracle Kubernetes Cluster (OKE) from this virtual machine.
-
-1. Click *Activities* and type *Firefox* in search box. Click on the icon for *Firefox*.
-    ![open firefox](images/open-firefox.png)
-
-2. Open the url [https://cloud.oracle.com](https://cloud.oracle.com). Enter your *Cloud Account Name* and then your credential for Oracle Cloud Account and click *Sign In*.
-
-3. In the Console, select the *Hamburger Menu* -> *Developer Services* -> *Kubernetes Clusters (OKE)* as shown.
-    ![OKE Icon](images/oke-icon.png)
-
-2. Click on the cluster name which your created in lab 3. and then click *Access Cluster*. 
-    ![Access Cluster](images/access-cluster.png)
-
-
-3. Select *Local Access* and then click on *Copy* as shown.
-    ![Local Access](images/local-access.png)
-
-4. Click on *Activities* and select the *Terminal*.
-    ![Terminal](images/click-terminal.png)
-
-5. Paste the copied command in the terminal. For *Do you want to create a new config file?*, Type *y* then press *Enter*. For *Do you want to create your config file by logging in through a browser?*, Type *y* then press *Enter*.
-    ![OCI Config](images/oci-config.png)
-
-6. In Firefox Browser, click on your active session.
-    > You will see *Authorization Completed* as shown.
-    ![Authorization Complete](images/authorization-complete.png)
-
-9. In *Enter a passphrase for your private key*, leave it empty and press *Enter*.
-    ![Empty Passphrase](images/empty-passphrase.png)
-
-10. Use the upper arrow key to run the *oce ce ...* command again and re-run it multiple time, until you see the *New config written to the Kubeconfig file /home/opc/.kube/config*.
-    ![Create KubeConfig](images/create-kubeconfig.png)
-
-
-
-## Task 2: Verify Connectivity of WebLogic Kubernetes Toolkit UI to Oracle Kubernetes Cluster
+## Task 1: Verify Connectivity of WebLogic Kubernetes Toolkit UI to Oracle Kubernetes Cluster
 In this task, we verify the connectivity to *Oracle Kubernetes Cluster(OKE)* from the `WebLogic Kubernetes Toolkit UI` application.
 
 1. Go back to WebLogic Kubernetes Tool Kit UI, Click *Activities* and select the WebLogic Kubernetes Tool Kit UI window. 
@@ -65,7 +25,7 @@ In this task, we verify the connectivity to *Oracle Kubernetes Cluster(OKE)* fro
 3. Once you see *Verify Kubernetes Client Connectivity Success* window, Click *Ok*.
     ![Successfully Connected](images/successfully-connected.png)
 
-## Task 3: Install the WebLogic Kubernetes Operator to Oracle Kubernetes Cluster
+## Task 2: Install the WebLogic Kubernetes Operator to Oracle Kubernetes Cluster
 This section provides support for installing the WebLogic Kubernetes Operator (the “operator”) in the target Kubernetes cluster. 
 
 1. Click *WebLogic Operator*. Specify the following configuration details  and click *Install Operator*.
@@ -95,7 +55,6 @@ This section provides support for installing the WebLogic Kubernetes Operator (t
     ![Operator Installed](images/operator-installed.png)
 
 ## Acknowledgements
-
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Sid Joshi
-* **Last Updated By/Date** - Ankit Pandey, August 2023
+* **Last Updated By/Date** - Ankit Pandey, November 2023

@@ -23,9 +23,6 @@ In this lab, we access the application *opdemo* and verify the successful migrat
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Testing Application Deployment](videohub:1_1khcsrbq)
-
 ### Objectives
 
 In this lab, you will:
@@ -77,7 +74,6 @@ In this task, we explore the WebLogic Remote Console. We create connection to *A
 
 
 ## Acknowledgements
-
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Sid Joshi
-* **Last Updated By/Date** - Ankit Pandey, August 2023
+* **Last Updated By/Date** - Ankit Pandey, November 2023

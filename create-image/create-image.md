@@ -2,27 +2,64 @@
 
 ## Introduction
 
-**Primary Image** - The image containing the Oracle Fusion Middleware software. It is used as the basis of all containers that run WebLogic Servers for the domain.
+In this lab, we authenticate OCI CLI using the browser, which will creates *.oci/config* file. As we will use kubectl to manage the cluster remotely using the *Local Access*. It needs a *kubeconfig* file. This kubeconfig file will be generated using the OCI CLI.
 
-**Auxiliary Image** - The image that supplies the WebLogic Deploy Tooling software and the model files. At runtime, the auxiliary image’s content is merged with the primary image’s content.
-    ![Image Structure](images/image-structure.png)
-
-In this Lab, we use WebLogic server 12.2.1.3.0-ol8 image as Primary Image. Also, we create an auxiliary image, and push it to Oracle Container Image Registry repository using the generated authentication token. 
+Later, we create an auxiliary image, and push it to Oracle Container Image Registry repository using the generated authentication token. 
 
 Estimated Time: 10 minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Creation of Images for the OKE on OCI](videohub:1_y5o56oe5)
 
 ### Objectives
 
 In this lab, you will:
 
+* Configure kubectl (Kubernetes Cluster CLI) to connect to Kubernetes Cluster.
 * Create an Auxiliary Image and push the image to Oracle Cloud Container Image Registry.
 
-## Task 1: Prepare Auxiliary Image and Push the Auxiliary Image  
+
+## Task 1: Configure kubectl (Kubernetes Cluster CLI) to connect to Oracle Kubernetes Cluster
+In this Task, we creats the configuration file *.oci/config* and *.kube/config* in */home/opc* directory. This configuration file allow us to access Oracle Kubernetes Cluster (OKE) from this virtual machine.
+
+1. Click *Activities* and type *Firefox* in search box. Click on the icon for *Firefox*.
+    ![open firefox](images/open-firefox.png)
+
+2. Open the url [https://cloud.oracle.com](https://cloud.oracle.com). Enter your *Cloud Account Name* and then your credential for Oracle Cloud Account and click *Sign In*.
+
+3. In the Console, select the *Hamburger Menu* -> *Developer Services* -> *Kubernetes Clusters (OKE)* as shown.
+    ![OKE Icon](images/oke-icon.png)
+
+2. Click on the cluster name which your created in lab 3. and then click *Access Cluster*. 
+    ![Access Cluster](images/access-cluster.png)
+
+
+3. Select *Local Access* and then click on *Copy* as shown.
+    ![Local Access](images/local-access.png)
+
+4. Click on *Activities* and select the *Terminal*.
+    ![Terminal](images/click-terminal.png)
+
+5. Paste the copied command in the terminal. For *Do you want to create a new config file?*, Type *y* then press *Enter*. For *Do you want to create your config file by logging in through a browser?*, Type *y* then press *Enter*.
+    ![OCI Config](images/oci-config.png)
+
+6. In Firefox Browser, click on your active session.
+    > You will see *Authorization Completed* as shown.
+    ![Authorization Complete](images/authorization-complete.png)
+
+9. In *Enter a passphrase for your private key*, leave it empty and press *Enter*.
+    ![Empty Passphrase](images/empty-passphrase.png)
+
+10. Use the upper arrow key to run the *oce ce ...* command again and re-run it multiple time, until you see the *New config written to the Kubeconfig file /home/opc/.kube/config*.
+    ![Create KubeConfig](images/create-kubeconfig.png)
+
+## Task 2: Prepare Auxiliary Image and Push the Auxiliary Image  
 
 In this task, we are creating an Auxiliary image, which we will push to the Oracle Cloud Container Registry.
+
+**Primary Image** - The image containing the Oracle Fusion Middleware software. It is used as the basis of all containers that run WebLogic Servers for the domain.
+
+**Auxiliary Image** - The image that supplies the WebLogic Deploy Tooling software and the model files. At runtime, the auxiliary image’s content is merged with the primary image’s content.
+    ![Image Structure](images/image-structure.png)
+
+
 
 1. Click *Image*. For Primary Image, we will use the below *weblogic* Image.So leave default values under *Primary Image* section as shown 
 
@@ -89,7 +126,6 @@ Enter the  Auxiliary Image Registry Push Username as follows: `NAMESPACE_OF_YOUR
 
 
 ## Acknowledgements
-
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Sid Joshi
-* **Last Updated By/Date** - Ankit Pandey, August 2023
+* **Last Updated By/Date** - Ankit Pandey, November 2023

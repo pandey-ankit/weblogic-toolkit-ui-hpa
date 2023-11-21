@@ -6,9 +6,6 @@ In this lab, we scale a WebLogic Cluster. Here, we modify the value to *3* and r
 
 Estimated Time: 5 minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Scaling a WebLogic Cluster](videohub:1_mcl3p6td)
-
 ### Objectives
 
 In this lab, you will:
@@ -49,7 +46,6 @@ In this task, you just need to modify the *Replica* value from 2 to 3 and re-dep
 
 
 ## Acknowledgements
-
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Sid Joshi
-* **Last Updated By/Date** - Ankit Pandey, August 2023
+* **Last Updated By/Date** - Ankit Pandey, November 2023
