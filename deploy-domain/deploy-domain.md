@@ -51,6 +51,7 @@ In this task, we deploy the Kubernetes custom resource for the WebLogic domain t
 9. In Domain Status window, Scroll down to see status of all server pods then click *OK*.
     ![Server Status](images/server-status.png)
 
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** -  Ankit Pandey

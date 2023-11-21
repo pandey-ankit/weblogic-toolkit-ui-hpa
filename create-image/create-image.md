@@ -27,20 +27,19 @@ In this Task, we creats the configuration file *.oci/config* and *.kube/config* 
 3. In the Console, select the *Hamburger Menu* -> *Developer Services* -> *Kubernetes Clusters (OKE)* as shown.
     ![OKE Icon](images/oke-icon.png)
 
-2. Click on the cluster name which your created in lab 3. and then click *Access Cluster*. 
+4. Click on the cluster name which your created in lab 1 and then click *Access Cluster*. 
     ![Access Cluster](images/access-cluster.png)
 
 
-3. Select *Local Access* and then click on *Copy* as shown.
+5. Select *Local Access* and then click on *Copy* as shown.
     ![Local Access](images/local-access.png)
 
-4. Click on *Activities* and select the *Terminal*.
-    ![Terminal](images/click-terminal.png)
+6. Go back to terminal and open a new tab.
 
-5. Paste the copied command in the terminal. For *Do you want to create a new config file?*, Type *y* then press *Enter*. For *Do you want to create your config file by logging in through a browser?*, Type *y* then press *Enter*.
+7. Paste the copied command in the new tab. For *Do you want to create a new config file?*, Type *y* then press *Enter*. For *Do you want to create your config file by logging in through a browser?*, Type *y* then press *Enter*.
     ![OCI Config](images/oci-config.png)
 
-6. In Firefox Browser, click on your active session.
+8. In Firefox Browser, click on your active session.
     > You will see *Authorization Completed* as shown.
     ![Authorization Complete](images/authorization-complete.png)
 
@@ -61,39 +60,38 @@ In this task, we are creating an Auxiliary image, which we will push to the Orac
 
 
 
-1. Click *Image*. For Primary Image, we will use the below *weblogic* Image.So leave default values under *Primary Image* section as shown 
-
-    ```bash
-    <copy>container-registry.oracle.com/middleware/weblogic:12.2.1.3-ol8</copy>
-    ```
+1. Click *Image*. For Primary Image, we will use the below *weblogic:12.2.1.3-ol8* from [oracle container registry](http://container-registry.oracle.com) Image.So leave default values under *Primary Image* section as shown 
+    
     ![Primary Image](images/primary-image.png)
     > **For your information only:**<br>
     > The primary image is the one used for running the domain. One primary image can be reused for hundreds of domains. The primary image contains the OS, JDK, and FMW software installations.
 
-2. To create the Auxiliary Image Tag, we need the following information:
+2. Click **Auxiliary Image** tab. To create the Auxiliary Image Tag, we need the following information:
 
     * End point for the Region
     * Tenancy Namespace
 
+    ![click auxiliary](images/click-auxiliary.png)
 
-3. Locate the *Endpoint for Your Region*. Refer to the table documented at this URL [https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab). In the example shown, the endpoint for the region is *UK South (London)* (as the region name) and its endpoint is *lhr.ocir.io*. Locate the endpoint for your own *Region Name* and save it in the text file. You will also need it for the next lab.
 
-    ![End Points](images/end-point.png " ")
+3. Locate the *Endpoint for Your Region*. Refer to the table documented at this URL [https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab). In the example shown, the endpoint for the region is *US East(Ashburn)* (as the region name) and its endpoint is **iad.ocir.io**. Locate the endpoint for your own *Region Name* and save it in the text file. You will also need it for the next lab.
+
+    ![region name](images/region-name.png " ")
+    ![end points](images/end-point.png " ")
 
     >Now you have both the tenancy namespace and endpoint for your region.
  
 
-4. In lab 3, you already noted the tenancy namespace in your text file. If not, then for finding the Namespace of the tenancy, select the *Hamburger Menu* -> *Developer Services* -> *Container Registry*, as shown. Select the repository you created, you will find the Namespace as shown.
+4. In lab 2, you already noted the tenancy namespace in your text file. If not, then for finding the Namespace of the tenancy, select the *Hamburger Menu* -> *Developer Services* -> *Container Registry*, as shown. Select the repository you created, you will find the Namespace as shown.
     ![Tenancy Namespace](images/tenancy-namespace.png)
 
-5. Now you have both the Tenancy Namespace and Endpoint for your region. Copy the following command and paste it in your text file. Then replace the `END_POINT_OF_YOUR_REGION` with the endpoint of your region name, `NAMESPACE_OF_YOUR_TENANCY` with your tenancy's namespace. Click on *Auxiliary Image* tab as shown.
-    ![Auxiliary Tab](images/auxiliary-tab.png)
+5. Now you have both the Tenancy Namespace and Endpoint for your region. Copy the following command and paste it in your text file. Then replace the `END_POINT_OF_YOUR_REGION` with the endpoint of your region name, `NAMESPACE_OF_YOUR_TENANCY` with your tenancy's namespace. 
 
     ````bash
     <copy>END_POINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/test-model-your_first_name:v1</copy>
     ````
 
-> For example, in my case Auxiliary Image tag is `lhr.ocir.io/tenancynamespace/test-model-ankit:v1`.
+> For example, in my case Auxiliary Image tag is `iad.ocir.io/tenancynamespace/test-model-ankit:v1`.
 
 6. In step 4, you also determined the tenancy namespace.
 Enter the  Auxiliary Image Registry Push Username as follows: `NAMESPACE_OF_YOUR_TENANCY`/`YOUR_ORACLE_CLOUD_USERNAME`. <br>
@@ -123,7 +121,7 @@ Enter the  Auxiliary Image Registry Push Username as follows: `NAMESPACE_OF_YOUR
 12. Once image is successfully pushed, On *Push Image Complete* window, click *Ok*. 
     ![Auxiliary Pushed](images/auxiliary-pushed.png)
 
-
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** -  Ankit Pandey

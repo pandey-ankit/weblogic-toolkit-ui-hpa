@@ -160,6 +160,7 @@ In this task, we validate the model and prepare the model to be deployed on Orac
 4. Once you see *Prepare Model Complete* window,click *Ok*.
     ![Prepare Complete](images/prepare-complete.png)
 
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** -  Ankit Pandey

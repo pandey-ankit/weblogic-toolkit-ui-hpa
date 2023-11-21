@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, we authenticate OCI CLI using the browser, which will creates *.oci/config* file. As we will use kubectl to manage the cluster remotely using the *Local Access*. It needs a *kubeconfig* file. This kubeconfig file will be generated using the OCI CLI. Then we verify the connectivity to Kubernetes cluster from the WebLogic Kubernetes Toolkit UI. At last, we install the WebLogic Kubernetes Operator to Kubernetes cluster(OKE).
+In this lab, we verify the connectivity to Kubernetes cluster from the WebLogic Kubernetes Toolkit UI. At last, we install the WebLogic Kubernetes Operator to Kubernetes cluster(OKE).
 
-Estimated Time: 10 minutes
+Estimated Time: 05 minutes
 
 ### Objectives
 
@@ -53,6 +53,8 @@ This section provides support for installing the WebLogic Kubernetes Operator (t
 
 2. Once you see *WebLogic Kubernetes Operator Installation Complete*, Click *Ok*.
     ![Operator Installed](images/operator-installed.png)
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** -  Ankit Pandey

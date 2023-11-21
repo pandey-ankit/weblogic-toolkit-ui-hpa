@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab, we install the *Traefik* Ingress Controller. Later, we updates the *Ingress Routes* to access the application and admin server.
+In this lab, we install the *Traefik* Ingress Controller and then, we updates the *Ingress Routes* to access the application and admin server.
+
+Later, we access the application *opdemo* and verify the successful migration of an offline on-premise domain. we also verify the loadbalancing between managed server pods.
 
 Estimated Time: 10 minutes
 
@@ -12,6 +14,7 @@ In this lab, you will:
 
 * Install Ingress Controller on Kubernetes Cluster.
 * Update the Ingress Routes.
+* Access the Application through the Browser.
 
 
 ## Task 1: Installtion of Ingress Controller to the Oracle Kubernetes Cluster
@@ -70,7 +73,24 @@ In this task, we add the Ingress routes for Accessing the Admin Console, Applica
 8. Once you see *Ingress Routes Update Complete* window, Click *Ok*.
     ![Update Ingress Complete](images/update-ingress-complete.png)
     
-    > You need to notedown this IP and save it in text file.
+    > You need to notedown this load balancer public IP and save it in text file.
+
+## Task 3: Access the Application through the Browser
+
+In this task, we access the *opdemo* application. We click on refresh icon to make multiple request to application, to verify loadbalancing between two managed server pods.
+
+1. Copy the below URL and replace *XX.XX.XX.XX* with your load balancer public IP, which you noted down in last task. You can see the below output.
+    ```bash
+    <copy>http://XX.XX.XX.XX/opdemo/?dsname=testDatasource</copy>
+    ```
+    ![Open Application](images/open-application.png)
+
+
+2. If you click on Refresh icon, You can see load balancing between two managed server pods.
+    ![Show Loadbalancing](images/show-load-balancing.png)
+
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** -  Ankit Pandey

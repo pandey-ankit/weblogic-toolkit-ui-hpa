@@ -95,6 +95,9 @@ For ease of execution of this workshop, your VM instance has been pre-configured
     
     > Now you need to follow all the instruction inside this remote desktop.
 
+
+You may now proceed to the next lab.
+
 ## Learn More
 
 **About Oracle Cloud Infrastructure Container Engine for Kubernetes**
